@@ -1,0 +1,23 @@
+<h1><%= @task.title %></h1>
+<button class="btn btn-outline-info"><%= link_to "Edit task", edit_path(@task)  %></button>
+<div class="my-3">
+<div class="card">
+<p><%= @task.details %></p>
+</div>
+</div>
+<% if @task.completed == false %>
+  <div class="form-group form-check">
+    <div class="flexbox">
+    <input type="checkbox" class="form-check-input" id="completed">
+    <p>Not completed yet!</p>
+    </div>
+  </div>
+<% else %>
+  <div class="form-group form-check">
+    <div class="flexbox">
+    <input type="checkbox" class="form-check-input" id="completed" checked="checked">
+    <p>Completed!</p>
+    </div>
+  </div>
+<% end %>
+<button class="btn btn-outline-info"><%= link_to "Back to tasks", tasks_path  %></button>
