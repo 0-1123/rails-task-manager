@@ -13,4 +13,7 @@
   <% end %>
   <%= link_to task.title, task_path(task) %>
   </div>
+  <%= link_to "delete", destroy_path(task),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
 <% end %>
